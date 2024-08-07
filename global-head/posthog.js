@@ -3,8 +3,6 @@
   it adds the required posthog script based on whether the site
   is staged (flowfully.webflow.io) or in prod (www.flowfully.io)
 */
-console.log('I run in stage and prod');
-
 if (window.location.hostname === 'www.flowfully.io') {
   const posthogScript = document.createElement('script');
   posthogScript.innerHTML = `
@@ -13,6 +11,4 @@ if (window.location.hostname === 'www.flowfully.io') {
       });
   `;
   document.head.appendChild(posthogScript);
-
-  console.log('I only run in prod!');
 }
